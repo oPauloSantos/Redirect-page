@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&family=Roboto:wght@500&display=swap');
+
+*{
+    margin: 0;
+    animation: entering 0.9s ease-in-out; 
+}
+
+@keyframes entering{ /* animação do ínicio do site */
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body{
+    background: rgb(0,0,0);
+    background: linear-gradient(293deg, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 33%, rgba(25,25,25,1) 50%, rgba(18,18,18,1) 72%, rgba(0,0,0,1) 100%);
+    height: 100vh; /* preencher 100% da tela e não ter barra de rolagem */
+    overflow: hidden; 
+}
+
+.topo{
+    text-align: center;
+    margin-top: 40px; 
+}
+
+.cliente{
+    width: 200px;
+    transition: transform 0.3s ease; 
+}
+
+.txtName{ /* texto do Título */
+    font-size: 24px;
+    color: #e9e9e9;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+.destaque{ /* Destaque no G */
+    font-size: 28px;
+    background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box,
+      linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.trança{ /* Foi necessário criar uma class somente para esse estilo para retirar a distância do T para a segunda letra*/
+    font-size: 28px;
+    margin-right: -5px; /* Distância para a 2 letra */
+    background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box,
+      linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.especialidade { /* Subtítulo */
+    font-size: 24px;
+    color: #e9e9e9;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+}
+
+.especialidade::after { /* barra underline em gradient abaixo do subtítulo */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, #d39e33, #ed5636, #633bbc); /* Defina seu gradiente aqui */
+    z-index: -1;
+}
+
+.botões {  /* centralizar os botões */
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+/* estilização dos botões */
+    background-color: #ffffff;
+    border-radius: 24px; 
+    border: 1.2px solid #2b2a2e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 4.0); /* sombra nos botões */ 
+    height: 50px;
+    cursor: pointer;
+    width: 50vh; 
+/* estilização texto dos botões */
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    
+
+    transition: transform 0.3s ease;
+}
+
+.textbtn{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn img { /* icons */
+    width: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.mapa img{ /* icon mapa, alteração para padronizar de acordo com os outros icons */
+    width: 35px;
+    margin-left: 10px;
+}
+
+.rodape { /* créditos for me :) */
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #e9e9e9;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+.logo {
+    width: 15px;
+    vertical-align: middle; /* alinhar imagem e texto */
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.paulinho{
+    margin-left: 2px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 8px;
+    color: #e9e9e9;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+
+@media (max-width: 768px) { /* responsividade para aparelhos movéis, ponto alvo da criação do site. */
+    .btn {
+    width: calc(100vw - 10px);
+    transform: scale(0.8);
+    margin-bottom: -10px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 20px;
+    } 
+  }
+  
+  @media (max-height: 590px) {
+    .cliente {
+        width: 150px;
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-height: 540px) {
+    .cliente {
+        width: 150px;
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-height: 525px) {
+    .cliente {
+        width: 130px;
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+
+    .txtName{
+        font-size: 18px;
+    }
+
+    .trança{
+        font-size: 22px;
+    }
+
+    .destaque{
+        font-size: 22px;
+    }
+
+    .especialidade{
+        font-size: 18px;
+    }
+}
